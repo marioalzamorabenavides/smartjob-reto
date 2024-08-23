@@ -1,0 +1,110 @@
+<mxfile host="Electron" modified="2024-08-23T01:55:35.067Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="fBpTCr-En8JPlAPshiYV" version="24.6.4" type="device">
+  <diagram name="Página-1" id="Dejx9k9mwzTgf1IsowBR">
+    <mxGraphModel dx="1500" dy="887" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-17" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;perimeterSpacing=1;strokeWidth=1;dashPattern=8 8;fillColor=none;strokeColor=#3333FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="640" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-16" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3333FF;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="520" y="380" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-15" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;strokeColor=#3333FF;" vertex="1" parent="1">
+          <mxGeometry x="720" y="180" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-14" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;strokeColor=#3333FF;" vertex="1" parent="1">
+          <mxGeometry x="520" y="180" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-13" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeColor=#3333FF;dashPattern=8 8;" vertex="1" parent="1">
+          <mxGeometry x="320" y="180" width="160" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-1" value="usuario" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-2" target="aujJO4oo_mH7PpNbpVd1-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-2" value="internet" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.computer;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="238.2" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-4" target="aujJO4oo_mH7PpNbpVd1-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-4" target="aujJO4oo_mH7PpNbpVd1-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-4" value="front door" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Front_Doors.svg;" vertex="1" parent="1">
+          <mxGeometry x="366" y="230" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-5" value="waf" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Web_Application_Firewall_Policies_WAF.svg;" vertex="1" parent="1">
+          <mxGeometry x="370" y="348" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-9" target="aujJO4oo_mH7PpNbpVd1-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="260" />
+              <mxPoint x="900" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-9" value="App service" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="1">
+          <mxGeometry x="768" y="228" width="64" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-12" value="smartjob-retoDb" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Database.svg;" vertex="1" parent="1">
+          <mxGeometry x="676" y="408" width="48" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-18" value="Azure" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-19" value="smartjob-net" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="840" y="520" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-21" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_network;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="520" width="50" height="27.500000000000004" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-23" value="sql-sub-net" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="470" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-24" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_network;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="475" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-25" value="service-sub-net" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="320" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-26" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_network;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="325" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-28" value="static-sub-net" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="320" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-29" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.virtual_network;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="324.5" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-32" value="smartjob-reto.com" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="494" y="180" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-33" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;api.smartjob-reto.a.com&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="180" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-34" value="proxy" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.2d.proxy;" vertex="1" parent="1">
+          <mxGeometry x="630" y="244.49999999999997" width="30" height="32.4" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-3" value="static web app" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/preview/Static_Apps.svg;" vertex="1" parent="1">
+          <mxGeometry x="540" y="233" width="68" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.032;entryY=0.511;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-34" target="aujJO4oo_mH7PpNbpVd1-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aujJO4oo_mH7PpNbpVd1-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="aujJO4oo_mH7PpNbpVd1-1" target="aujJO4oo_mH7PpNbpVd1-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

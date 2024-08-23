@@ -1,0 +1,24 @@
+services:
+  api-reto-smartjob:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "9090:9090"
+    environment:
+    - SPRING_PROFILES_ACTIVE=prod
+    - APPLICATION_PORT=9090
+    - DB_NAME=retodb
+    - DB_USER=sa
+    - DB_PASSWORD=password
+    - H2_CONSOLE=true
+    - PASSWORD_REGEX=^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{9,}$
+    - PASSWORD_MESSAGE=El password debe tener minimo 8 caracteres, al menos un digito, al menos una minuscula y al menos una mayuscula.
+    - JWT_SECRET=daf66e01593f61a15b857cf433aae03a005812b31234e149036bcc8dee755dbb
+    - JWT_EXPIRATION=900000
+    networks:
+    - api-network
+
+networks:
+  api-network:
+    driver: bridge

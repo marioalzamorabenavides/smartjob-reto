@@ -1,0 +1,347 @@
+
+openapi: 3.0.0
+info:
+  title: Api Creacion de usuarios
+  description: Esta API proporciona funcionalidades para la gestión de usuarios, incluyendo la creación, actualización, activación/desactivación, y listado de usuarios. La API utiliza tokens JWT para la autenticación y autorización.
+  version: 1.0.0
+servers:
+  - url: http://localhost:9090
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+paths:
+  /api/auth/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Juan Rodriguez
+                email:
+                  type: string
+                  example: juana@raodriaguesz.org
+                password:
+                  type: string
+                  example: Password1
+                phones:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      number:
+                        type: string
+                        example: 1234567
+                      cityCode:
+                        type: string
+                        example: 1
+                      countryCode:
+                        type: string
+                        example: 57
+      responses:
+        '200':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 48de7747-d5dc-4ac9-bdfd-6e5d9adf6313
+                  created:
+                    type: string
+                    example: 2024-08-23T00:20:41.559694796
+                  modified:
+                    type: string
+                    example: 2024-08-23T00:20:41.559773553
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYUByYW9kcmlhZ3Vlc3oub3JnIiwic3ViIjoiZmE0ZmJjZGYtM2M0YS00YWJlLTgwNzMtZDg1MDc3MmFjZWM4IiwiaWF0IjoxNzI0MzcyNDQxLCJleHAiOjE3MjQzNzMzNDEsImp0aSI6IjMyZDM2ZTYwLTRkZGUtNDk4Yy1hYjA2LWFmOWRjZmE4ODkxNSJ9.f5kjzwyEY5TkZi6iSL5dxyBaLUG6ntBDEaWZGvImCDw
+                  active:
+                    type: boolean
+                    example: true
+                  last_login:
+                    type: string
+                    example: 2024-08-23T00:20:41.559769225
+
+  /api/auth/login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: juan@raodriaguesz.org
+                password:
+                  type: string
+                  example: Password2
+      responses:
+        '200':
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: c605dfff-e1eb-42bd-adbc-c020ed2c1769
+                  created:
+                    type: string
+                    example: 2024-08-22T17:17:03.361257
+                  modified:
+                    type: string
+                    example: 2024-08-22T17:18:40.210247
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuQHJhb2RyaWFndWVzei5vcmciLCJzdWIiOiI0NDM2ZWE2ZS1iMGY3LTQ0OWItODUxMS00MzI5MzI3MGEyMzIiLCJpYXQiOjE3MjQzNjUxNDIsImV4cCI6MTcyNDM2NjA0MiwianRpIjoiYzAyODFlYjQtMWQ1Ni00NjE5LTliZTEtZWNlNDBhNmJkY2QwIn0.V7GqIfriCGx550LvBwmBGWmmfV-7m15x4meuzyMisxE
+                  active:
+                    type: boolean
+                    example: true
+                  last_login:
+                    type: string
+                    example: 2024-08-22T17:19:02.5135462
+
+  /api/users:
+    get:
+      security:
+        - bearerAuth: []
+      summary: Get all users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: f509958b-e323-48e2-baff-f9945f17f12a
+                    name:
+                      type: string
+                      example: Juan Rodriguez
+                    email:
+                      type: string
+                      example: juan@raodriaguesz.org
+                    password:
+                      type: string
+                      example: $2a$10$aFQe405MRh9IhvQJuEaPXuctXpqEJO.fOefm1vfY59sLrz0mIGiRe
+                    created:
+                      type: string
+                      example: 2024-08-22T22:46:49.562427
+                    modified:
+                      type: string
+                      example: 2024-08-22T22:46:49.562491
+                    lastLogin:
+                      type: string
+                      example: 2024-08-22T22:46:49.562446
+                    token:
+                      type: string
+                      example: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuQHJhb2RyaWFndWVzei5vcmciLCJzdWIiOiI3M2M3ODQxOC1kZDU2LTRlOGYtOWIwMS05ZWMyNWQyNmM5OWUiLCJpYXQiOjE3MjQzNjY4MDksImV4cCI6MTcyNDM2NzcwOSwianRpIjoiYTllMGE2MmQtMjhmZS00ZDAxLTg1ZGEtMWY4OTBhMDU4ODE2In0.rvzqZrp6YT1sZAreSY4Kg1RKii1z8Gssb2vOuX0w0qI
+                    phones:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: dd46b987-41c1-4701-ba8b-19c828f4cc5c
+                          number:
+                            type: string
+                            example: 1234567
+                          cityCode:
+                            type: string
+                            example: 1
+                          countryCode:
+                            type: string
+                            example: 57
+                    active:
+                      type: boolean
+                      example: true
+
+  /api/users/{id}:
+    delete:
+      security:
+        - bearerAuth: []
+      summary: Delete a user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: e19ef866-72bf-4be5-8504-db393d44a855
+      responses:
+        '204':
+          description: User deactivated successfully
+
+  /api/users/{id}/status:
+    patch:
+      security:
+        - bearerAuth: []
+      summary: Update user status
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: c0de3c48-7a37-4c0b-9629-c5f136e9078f
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: boolean
+                  example: true
+      responses:
+        '200':
+          description: User status updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+                    example: "Se activo el usuario correctamente."
+
+  /api/users/{id}/all:
+    put:
+      security:
+        - bearerAuth: []
+      summary: Update a user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: c0de3c48-7a37-4c0b-9629-c5f136e9078f
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phones:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      number:
+                        type: string
+                        example: 1234567
+                      cityCode:
+                        type: string
+                        example: 1
+                      countryCode:
+                        type: string
+                        example: 57
+      responses:
+        '200':
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 8e9fa4a1-2c4a-49e4-a6ab-dc9f5553ac90
+                  created:
+                    type: string
+                    example: 2024-08-23T00:29:07.06537252
+                  modified:
+                    type: string
+                    example: 2024-08-23T00:29:07.065387389
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYWFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6IjkyMGM0N2I0LTRmZmMtNGFhMy1iMzM4LTliYWU4Nzc0YjYzMCIsImlhdCI6MTcyNDM3Mjk0NywiZXhwIjoxNzI0MzczODQ3LCJqdGkiOiI3MTBkOTY0Ny1jNTY5LTQzOWEtYWEwMS04MzI2YjFkYzM5NmQifQ.HCDIweyvJ1QqhrTN0SdQuQpDhGPk1NxfV66HNWdeZkQ
+                  active:
+                    type: boolean
+                    example: true
+                  last_login:
+                    type: string
+                    example: 2024-08-23T00:29:07.065384922
+  
+  /api/users/{id}/fields:
+    patch:
+      security:
+        - bearerAuth: []
+      summary: Update a fields user
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: c0de3c48-7a37-4c0b-9629-c5f136e9078f
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phones:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      number:
+                        type: string
+                        example: 1234567
+                      cityCode:
+                        type: string
+                        example: 1
+                      countryCode:
+                        type: string
+                        example: 57
+      responses:
+        '200':
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 8e9fa4a1-2c4a-49e4-a6ab-dc9f5553ac90
+                  created:
+                    type: string
+                    example: 2024-08-23T00:29:07.06537252
+                  modified:
+                    type: string
+                    example: 2024-08-23T00:29:07.065387389
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYWFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6IjkyMGM0N2I0LTRmZmMtNGFhMy1iMzM4LTliYWU4Nzc0YjYzMCIsImlhdCI6MTcyNDM3Mjk0NywiZXhwIjoxNzI0MzczODQ3LCJqdGkiOiI3MTBkOTY0Ny1jNTY5LTQzOWEtYWEwMS04MzI2YjFkYzM5NmQifQ.HCDIweyvJ1QqhrTN0SdQuQpDhGPk1NxfV66HNWdeZkQ
+                  active:
+                    type: boolean
+                    example: true
+                  last_login:
+                    type: string
+                    example: 2024-08-23T00:29:07.065384922

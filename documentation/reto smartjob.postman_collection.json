@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "e55f19aa-0a7d-4bab-8627-aa945f864915",
+		"name": "reto smartjob",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24730757"
+	},
+	"item": [
+		{
+			"name": "registrar usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan Rodriguez\",\r\n    \"email\": \"juanaa@raodriaguesz.org\",\r\n    \"password\": \"Password1\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"57\"\r\n        },\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"57\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/auth/register",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"juan@raodriaguesz.org\",\r\n    \"password\": \"Password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/auth/login",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYWFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6IjE4YTg0YjU2LWZhZTMtNDZlOS1iMWYxLTg3MWY1Yjg0ZmZjYyIsImlhdCI6MTcyNDM3MzMzNSwiZXhwIjoxNzI0Mzc0MjM1LCJqdGkiOiIxNmNkMTQzMy0xMWRjLTRlNTYtYTU2Ni1lM2FhYTM2MTUwYzIifQ.6rpfwn6ATddTB1cC8kdJNbh_YNr4W1SLv7YUO5rqaLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/users",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW5hIFJvZHJpZ3VleiIsImVtYWlsIjoianVhbmFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6ImMwZTdiMjk4LTU3NjMtNDlmNS04MmY3LWQwYTgzNzkzMjZjMSIsImlhdCI6MTcyNDM1OTcxOSwiZXhwIjoxNzI0MzYwNjE5LCJqdGkiOiJhNzAxNmYyMC05MTI4LTQwYzItYTMwMS0xYWNkNjQ3NTU0NGUifQ.SDPBtjKtPvIZx9PDcykqS1jI-klUCCMLEhrAULFzfeU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseurl}}/api/users/e19ef866-72bf-4be5-8504-db393d44a855",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"e19ef866-72bf-4be5-8504-db393d44a855"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activar/desactivar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYWFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6IjE4YTg0YjU2LWZhZTMtNDZlOS1iMWYxLTg3MWY1Yjg0ZmZjYyIsImlhdCI6MTcyNDM3MzMzNSwiZXhwIjoxNzI0Mzc0MjM1LCJqdGkiOiIxNmNkMTQzMy0xMWRjLTRlNTYtYTU2Ni1lM2FhYTM2MTUwYzIifQ.6rpfwn6ATddTB1cC8kdJNbh_YNr4W1SLv7YUO5rqaLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuQHJhb2RyaWFndWVzei5vcmciLCJzdWIiOiJkNjI2MzljZi1hNTRiLTQ0Y2UtOWZjNi1kYjRlYzIwODRmYzMiLCJpYXQiOjE3MjQzNTk3MzEsImV4cCI6MTcyNDM2MDYzMSwianRpIjoiYzU1MzMyNzYtMjFlOS00Y2IyLWI2ZDYtNGMxNWY0NWZkNGVlIn0.Mv0K2po5FOYJk10sLni5wxJUo-Z5UgGLFlGr3XpkF6Q",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/users/44867d0d-2fc0-4ffe-983b-00dacbef9653/status",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"44867d0d-2fc0-4ffe-983b-00dacbef9653",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYWFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6IjE4YTg0YjU2LWZhZTMtNDZlOS1iMWYxLTg3MWY1Yjg0ZmZjYyIsImlhdCI6MTcyNDM3MzMzNSwiZXhwIjoxNzI0Mzc0MjM1LCJqdGkiOiIxNmNkMTQzMy0xMWRjLTRlNTYtYTU2Ni1lM2FhYTM2MTUwYzIifQ.6rpfwn6ATddTB1cC8kdJNbh_YNr4W1SLv7YUO5rqaLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan Rodriguez\",\r\n    \"email\": \"juanaa@raodriaguesz.org\",\r\n    \"password\": \"Password1\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"57\"\r\n        },\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"cityCode\": \"1\",\r\n            \"countryCode\": \"57\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/users/44867d0d-2fc0-4ffe-983b-00dacbef9653/all",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"44867d0d-2fc0-4ffe-983b-00dacbef9653",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwibmFtZSI6Ikp1YW4gUm9kcmlndWV6IiwiZW1haWwiOiJqdWFuYWFAcmFvZHJpYWd1ZXN6Lm9yZyIsInN1YiI6IjE4YTg0YjU2LWZhZTMtNDZlOS1iMWYxLTg3MWY1Yjg0ZmZjYyIsImlhdCI6MTcyNDM3MzMzNSwiZXhwIjoxNzI0Mzc0MjM1LCJqdGkiOiIxNmNkMTQzMy0xMWRjLTRlNTYtYTU2Ni1lM2FhYTM2MTUwYzIifQ.6rpfwn6ATddTB1cC8kdJNbh_YNr4W1SLv7YUO5rqaLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Juan Rodriguez\",\r\n    \"password\": \"Password2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/users/44867d0d-2fc0-4ffe-983b-00dacbef9653/fields",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"44867d0d-2fc0-4ffe-983b-00dacbef9653",
+						"fields"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:9090",
+			"type": "string"
+		}
+	]
+}
